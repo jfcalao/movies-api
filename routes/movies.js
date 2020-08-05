@@ -36,6 +36,7 @@ function moviesApi(app) {
   })
   router.post('/', async function (req, res, next) {
     const { body: movie }= req
+    console.log('ESTO ES LO QUE ESTA EN BODY: ' ,movie)
     try {
       const createMovieId = await moviesService.createMovie({movie})
       res.status(201).json(

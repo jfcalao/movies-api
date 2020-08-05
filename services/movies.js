@@ -11,7 +11,8 @@ class MoviesService{
     return movies || []
   }
   async getMovie({movieId}){
-    const movie= await this.mongoDB.get(this.collection,movieId)
+    console.log('MOVIE ID IN MOVIE SERVICE ', movieId)
+    const movie= await this.mongoDB.get(this.collection, movieId)
     return movie || {}
   }
   async createMovie({movie}){
@@ -22,7 +23,7 @@ class MoviesService{
     const updateMovieId= await this.mongoDB.update(this.collection, movieId, movie)
     return updateMovieId
   }
-  async deleteMovie(movieId){
+  async deleteMovie({movieId}){
     const deletedMovieId= await this.mongoDB.delete(this.collection, movieId)
     return deletedMovieId
   }

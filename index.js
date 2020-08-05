@@ -3,6 +3,10 @@ const app= express()
 
 const {config}= require('./config/index')
 const moviesApi= require('./routes/movies')
+
+//body parser
+app.use(express.json())
+
 moviesApi(app)
 // SOME BASIC EXAMPLES THAT I PROBABLY WILL USE:
 /* app.get('/', function(req, res){
